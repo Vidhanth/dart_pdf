@@ -488,27 +488,6 @@ class _PdfPreviewState extends State<PdfPreview> {
       }
     }
 
-    assert(() {
-      if (actions.isNotEmpty) {
-        actions.add(
-          Switch(
-            activeColor: Colors.red,
-            value: pw.Document.debug,
-            onChanged: (bool value) {
-              setState(
-                () {
-                  pw.Document.debug = value;
-                  _raster();
-                },
-              );
-            },
-          ),
-        );
-      }
-
-      return true;
-    }());
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
